@@ -1,6 +1,16 @@
 import * as _ from 'lodash';
 import * as angular from 'angular';
-import IServiceProvider = angular.IServiceProvider;
+
+function _getModule(moduleName:string):angular.IModule{
+let module: angular.IModule;
+        try {
+            module = angular.module(moduleName);
+        } catch (err) {
+            module = angular.module(moduleName, []);
+        }
+        return module;
+}
+
 interface ComponentOptions extends angular.IComponentOptions {
     module: string;
     /**
@@ -13,7 +23,7 @@ export const Component = (options: ComponentOptions): Function => {
     return (controller: Function) => {
         let component: ComponentOptions = _.assign(options, {controller});
         if (typeof angular !== 'undefined') {
-            getModule(component.module)
+            _getModule(component.module)
                 .component(getComponentNameFromSelector(component), component);
         }
         return controller;
@@ -21,16 +31,6 @@ export const Component = (options: ComponentOptions): Function => {
 
     function getComponentNameFromSelector(component: ComponentOptions): string {
         return _.camelCase(component.selector);
-    }
-
-    function getModule(moduleName: string): angular.IModule {
-        let module: angular.IModule;
-        try {
-            module = angular.module(moduleName);
-        } catch (err) {
-            module = angular.module(moduleName, []);
-        }
-        return module;
     }
 };
 
@@ -41,21 +41,11 @@ interface ServiceOptions {
 export const Service = (options: ServiceOptions): Function => {
     return (service: Function) => {
         if (typeof angular !== 'undefined') {
-            getModule(options.module)
+            _getModule(options.module)
                 .service(options.serviceName, service);
         }
         return service;
     };
-
-    function getModule(moduleName: string): angular.IModule {
-        let module: angular.IModule;
-        try {
-            module = angular.module(moduleName);
-        } catch (err) {
-            module = angular.module(moduleName, []);
-        }
-        return module;
-    }
 };
 
 interface FilterOptions {
@@ -66,19 +56,9 @@ interface FilterOptions {
 export const Filter = (options: FilterOptions): Function => {
     return (filter: Function) => {
         if (typeof angular !== 'undefined') {
-            getModule(options.module)
+            _getModule(options.module)
                 .filter(options.filterName, filter);
         }
         return filter;
     };
-
-    function getModule(moduleName: string): angular.IModule {
-        let module: angular.IModule;
-        try {
-            module = angular.module(moduleName);
-        } catch (err) {
-            module = angular.module(moduleName, []);
-        }
-        return module;
-    }
 };
