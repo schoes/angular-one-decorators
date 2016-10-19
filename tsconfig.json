@@ -10,8 +10,6 @@
     "experimentalDecorators": true
   },
   "files": [
-    "./src/app.ts",
-    "./node_modules/@types/node/index.d.ts",
-    "./node_modules/@types/jasmine/index.d.ts"
+    "./angular.decorators.ts"
   ]
 }
