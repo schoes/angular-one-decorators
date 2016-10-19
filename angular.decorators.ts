@@ -13,9 +13,6 @@ let module: angular.IModule;
 
 interface ComponentOptions extends angular.IComponentOptions {
     module: string;
-    /**
-     * name of tag, such as vvn-component-name
-     */
     selector: string;
 }
 export const Component = (options: ComponentOptions): Function => {
