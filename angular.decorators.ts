@@ -1,17 +1,17 @@
 import * as _ from 'lodash';
 import * as angular from 'angular';
 import IServiceProvider = angular.IServiceProvider;
-interface IComponentOptions extends angular.IComponentOptions {
+interface ComponentOptions extends angular.IComponentOptions {
     module: string;
     /**
      * name of tag, such as vvn-component-name
      */
     selector: string;
 }
-export const Component = (options: IComponentOptions): Function => {
+export const Component = (options: ComponentOptions): Function => {
 
     return (controller: Function) => {
-        let component: IComponentOptions = _.assign(options, {controller});
+        let component: ComponentOptions = _.assign(options, {controller});
         if (typeof angular !== 'undefined') {
             getModule(component.module)
                 .component(getComponentNameFromSelector(component), component);
@@ -19,7 +19,7 @@ export const Component = (options: IComponentOptions): Function => {
         return controller;
     };
 
-    function getComponentNameFromSelector(component: IComponentOptions): string {
+    function getComponentNameFromSelector(component: ComponentOptions): string {
         return _.camelCase(component.selector);
     }
 
@@ -34,11 +34,11 @@ export const Component = (options: IComponentOptions): Function => {
     }
 };
 
-interface IServiceOptions {
+interface ServiceOptions {
     module: string;
     serviceName: string;
 }
-export const Service = (options: IServiceOptions): Function => {
+export const Service = (options: ServiceOptions): Function => {
     return (service: Function) => {
         if (typeof angular !== 'undefined') {
             getModule(options.module)
@@ -58,12 +58,12 @@ export const Service = (options: IServiceOptions): Function => {
     }
 };
 
-interface IFilterOptions {
+interface FilterOptions {
     module: string;
     filterName: string;
 }
 
-export const Filter = (options: IFilterOptions): Function => {
+export const Filter = (options: FilterOptions): Function => {
     return (filter: Function) => {
         if (typeof angular !== 'undefined') {
             getModule(options.module)
