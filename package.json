@@ -1,0 +1,30 @@
+{
+  "name": "angular-typescript-decorators",
+  "version": "0.0.1",
+  "description": "Typescript 2 decorators for angular 1 projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schoes/angular-typescript-decorators.git"
+  },
+  "keywords": [
+    "angular",
+    "typescript",
+    "decorators"
+  ],
+  "author": "Sven Schoeni",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/schoes/angular-typescript-decorators/issues"
+  },
+  "homepage": "https://github.com/schoes/angular-typescript-decorators#readme",
+  "devDependencies": {
+    "@types/angular": "^1.5.16",
+    "@types/lodash": "^4.14.37",
+    "angular": "^1.5.8",
+    "lodash": "^4.16.4"
+  }
+}
