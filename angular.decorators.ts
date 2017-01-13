@@ -1,14 +1,14 @@
 import * as _ from 'lodash';
 import * as angular from 'angular';
 
-function _getModule(moduleName:string):angular.IModule{
-let module: angular.IModule;
-        try {
-            module = angular.module(moduleName);
-        } catch (err) {
-            module = angular.module(moduleName, []);
-        }
-        return module;
+function _getModule(moduleName: string): angular.IModule {
+    let module: angular.IModule;
+    try {
+        module = angular.module(moduleName);
+    } catch (err) {
+        module = angular.module(moduleName, []);
+    }
+    return module;
 }
 
 interface ComponentOptions extends angular.IComponentOptions {
@@ -49,13 +49,13 @@ interface FilterOptions {
     module: string;
     filterName: string;
 }
-
-export const Filter = (options: FilterOptions): Function => {
-    return (filter: Function) => {
+export const Filter = (options: FilterOptions) => {
+    return (target: any, propertyKey: string, descriptor: PropertyDescriptor) => {
+        console.log(target, propertyKey, descriptor);
         if (typeof angular !== 'undefined') {
             _getModule(options.module)
-                .filter(options.filterName, filter);
+                .filter(options.filterName, descriptor.value);
         }
-        return filter;
+        return descriptor.value;
     };
 };
