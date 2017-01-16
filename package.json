@@ -1,6 +1,6 @@
 {
   "name": "angular-typescript-decorators",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Typescript 2 decorators for angular 1 projects",
   "main": "index.js",
   "scripts": {
