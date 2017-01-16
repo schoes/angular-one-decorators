@@ -11,7 +11,7 @@ function _getModule(moduleName: string): angular.IModule {
     return module;
 }
 
-interface ComponentOptions extends angular.IComponentOptions {
+export interface ComponentOptions extends angular.IComponentOptions {
     module: string;
     selector: string;
 }
@@ -31,7 +31,7 @@ export const Component = (options: ComponentOptions): Function => {
     }
 };
 
-interface ServiceOptions {
+export interface ServiceOptions {
     module: string;
     serviceName: string;
 }
@@ -45,13 +45,12 @@ export const Service = (options: ServiceOptions): Function => {
     };
 };
 
-interface FilterOptions {
+export interface FilterOptions {
     module: string;
     filterName: string;
 }
 export const Filter = (options: FilterOptions) => {
     return (target: any, propertyKey: string, descriptor: PropertyDescriptor) => {
-        console.log(target, propertyKey, descriptor);
         if (typeof angular !== 'undefined') {
             _getModule(options.module)
                 .filter(options.filterName, descriptor.value);
