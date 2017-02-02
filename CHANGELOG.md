@@ -1,3 +1,13 @@
+<a name="0.1.0"></a>
+# [0.1.0](https://github.com/schoes/angular-typescript-decorators/compare/v0.0.3...v0.1.0) (2017-02-02)
+
+
+### Features
+
+* **package:** set the new name for angular decorators ([feb0eed](https://github.com/schoes/angular-typescript-decorators/commit/feb0eed))
+
+
+
 <a name="0.0.3"></a>
 ## [0.0.3](https://github.com/schoes/angular-typescript-decorators/compare/v0.0.2...v0.0.3) (2017-01-16)
 
