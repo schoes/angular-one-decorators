@@ -1,5 +1,5 @@
-import * as _ from 'lodash';
-import * as angular from 'angular';
+import * as _ from "lodash";
+import * as angular from "angular";
 
 function _getModule(moduleName: string): angular.IModule {
     let module: angular.IModule;
@@ -11,9 +11,13 @@ function _getModule(moduleName: string): angular.IModule {
     return module;
 }
 
-export interface ComponentOptions extends angular.IComponentOptions {
+export interface ModuleOptions {
     module: string;
+}
+
+export interface ComponentOptions extends angular.IComponentOptions,ModuleOptions {
     selector: string;
+    styles?: string;
 }
 export const Component = (options: ComponentOptions): Function => {
 
@@ -31,8 +35,7 @@ export const Component = (options: ComponentOptions): Function => {
     }
 };
 
-export interface ServiceOptions {
-    module: string;
+export interface ServiceOptions extends ModuleOptions {
     serviceName: string;
 }
 export const Service = (options: ServiceOptions): Function => {
@@ -45,8 +48,7 @@ export const Service = (options: ServiceOptions): Function => {
     };
 };
 
-export interface FilterOptions {
-    module: string;
+export interface FilterOptions extends ModuleOptions {
     filterName: string;
 }
 export const Filter = (options: FilterOptions) => {
@@ -54,6 +56,27 @@ export const Filter = (options: FilterOptions) => {
         if (typeof angular !== 'undefined') {
             _getModule(options.module)
                 .filter(options.filterName, descriptor.value);
+        }
+        return descriptor.value;
+    };
+};
+
+export const Config = (options: ModuleOptions) => {
+    return (target: any, propertyKey: string, descriptor: PropertyDescriptor) => {
+        if (typeof angular !== 'undefined') {
+            _getModule(options.module)
+                .config(descriptor.value);
+        }
+        return descriptor.value;
+    };
+};
+
+
+export const Run = (options: ModuleOptions) => {
+    return (target: any, propertyKey: string, descriptor: PropertyDescriptor) => {
+        if (typeof angular !== 'undefined') {
+            _getModule(options.module)
+                .run(descriptor.value);
         }
         return descriptor.value;
     };
