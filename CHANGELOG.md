@@ -1,3 +1,13 @@
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/schoes/angular-typescript-decorators/compare/v0.1.0...v0.2.0) (2017-02-06)
+
+
+### Features
+
+* **decorators:** new decorator for Run and Config Block in angular ([6decd1d](https://github.com/schoes/angular-typescript-decorators/commit/6decd1d))
+
+
+
 <a name="0.1.0"></a>
 # [0.1.0](https://github.com/schoes/angular-typescript-decorators/compare/v0.0.3...v0.1.0) (2017-02-02)
 
