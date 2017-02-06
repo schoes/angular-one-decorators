@@ -4,8 +4,10 @@ import * as angular from "angular";
 function _getModule(moduleName: string): angular.IModule {
     let module: angular.IModule;
     try {
+        console.log('module found', moduleName);
         module = angular.module(moduleName);
     } catch (err) {
+        console.error('module not found', moduleName, 'create a new one');
         module = angular.module(moduleName, []);
     }
     return module;
