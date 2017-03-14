@@ -6,6 +6,7 @@
   "scripts": {
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add -A",
     "postversion": "git push && git push --tags && npm publish"
+    "ci": "tsc"
   },
   "repository": {
     "type": "git",
