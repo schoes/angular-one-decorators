@@ -1,11 +1,11 @@
 {
-  "name": "angular-decorators",
+  "name": "angular-one-decorators",
   "version": "0.2.1",
   "description": "Typescript 2 decorators for angular 1 projects",
   "main": "index.js",
   "scripts": {
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add -A",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags && npm publish"
   },
   "repository": {
     "type": "git",
