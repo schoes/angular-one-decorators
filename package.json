@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/schoes/angular-typescript-decorators.git"
+    "url": "git+https://github.com/schoes/angular-one-decorators.git"
   },
   "keywords": [
     "angular",
@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/schoes/angular-typescript-decorators/issues"
   },
-  "homepage": "https://github.com/schoes/angular-typescript-decorators#readme",
+  "homepage": "https://github.com/schoes/angular-one-decorators#readme",
   "devDependencies": {
     "@types/angular": "~1.6.0",
     "@types/lodash": "~4.14.0",
