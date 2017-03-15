@@ -1,3 +1,13 @@
+<a name="0.4.2"></a>
+## [0.4.2](https://github.com/schoes/angular-one-decorators/compare/v0.4.1...v0.4.2) (2017-03-15)
+
+
+### Bug Fixes
+
+* **decorator:** remove log statements ([1cdea22](https://github.com/schoes/angular-one-decorators/commit/1cdea22))
+
+
+
 <a name="0.4.1"></a>
 ## [0.4.1](https://github.com/schoes/angular-one-decorators/compare/v0.4.0...v0.4.1) (2017-03-14)
 
