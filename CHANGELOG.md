@@ -1,3 +1,13 @@
+<a name="0.4.3"></a>
+## [0.4.3](https://github.com/schoes/angular-one-decorators/compare/v0.4.2...v0.4.3) (2017-04-03)
+
+
+### Features
+
+* **decorator:** add a Factory Decorator ([3488d30](https://github.com/schoes/angular-one-decorators/commit/3488d30))
+
+
+
 <a name="0.4.2"></a>
 ## [0.4.2](https://github.com/schoes/angular-one-decorators/compare/v0.4.1...v0.4.2) (2017-03-15)
 
