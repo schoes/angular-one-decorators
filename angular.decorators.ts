@@ -15,7 +15,7 @@ export interface ModuleOptions {
     module: string;
 }
 
-export interface ComponentOptions extends angular.IComponentOptions,ModuleOptions {
+export interface ComponentOptions extends angular.IComponentOptions, ModuleOptions {
     selector: string;
     styles?: string;
 }
@@ -45,6 +45,18 @@ export const Service = (options: ServiceOptions): Function => {
                 .service(options.serviceName, service);
         }
         return service;
+    };
+};
+export interface FactoryOptions extends ModuleOptions {
+    factoryName: string;
+}
+export const Factory = (options: FactoryOptions): Function => {
+    return (factory: Function) => {
+        if (typeof angular !== 'undefined') {
+            _getModule(options.module)
+                .factory(options.factoryName, factory);
+        }
+        return factory;
     };
 };
 
