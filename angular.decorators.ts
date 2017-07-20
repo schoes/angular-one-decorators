@@ -47,6 +47,18 @@ export const Service = (options: ServiceOptions): Function => {
         return service;
     };
 };
+export interface ProviderOptions extends ModuleOptions {
+    providerName: string;
+}
+export const Provider = (options: ProviderOptions): Function => {
+    return (provider: Function) => {
+        if (typeof angular !== 'undefined') {
+            _getModule(options.module)
+                .service(options.providerName, provider);
+        }
+        return provider;
+    };
+};
 export interface FactoryOptions extends ModuleOptions {
     factoryName: string;
 }
