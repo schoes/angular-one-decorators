@@ -14,7 +14,7 @@ export let moduleName = 'service.module'
 export class YourNewService{
 }
 ```
-export class MyMobiliarContractService implements ContractService {
+
 ### Component
 ```typescript
 export let moduleName = 'component.module';
