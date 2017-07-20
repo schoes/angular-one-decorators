@@ -50,8 +50,8 @@ export const Service = (options: ServiceOptions): Function => {
 export interface ProviderOptions extends ModuleOptions {
     providerName: string;
 }
-export const Provider = (options: ProviderOptions): Function => {
-    return (provider: Function) => {
+export const Provider = (options: ProviderOptions): angular.IServiceProvider => {
+    return (provider: angular.IServiceProvider) => {
         if (typeof angular !== 'undefined') {
             _getModule(options.module)
                 .provider(options.providerName, provider);
