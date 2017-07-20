@@ -54,7 +54,7 @@ export const Provider = (options: ProviderOptions): Function => {
     return (provider: Function) => {
         if (typeof angular !== 'undefined') {
             _getModule(options.module)
-                .service(options.providerName, provider);
+                .provider(options.providerName, provider);
         }
         return provider;
     };
