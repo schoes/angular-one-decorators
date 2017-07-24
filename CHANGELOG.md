@@ -1,3 +1,19 @@
+<a name="0.5.0"></a>
+# [0.5.0](https://github.com/schoes/angular-one-decorators/compare/v0.4.4...v0.5.0) (2017-07-24)
+
+
+### Bug Fixes
+
+* **provider:** correcting return type ([9b81dad](https://github.com/schoes/angular-one-decorators/commit/9b81dad))
+* **provider:** correcting return type ([b28105b](https://github.com/schoes/angular-one-decorators/commit/b28105b))
+
+
+### Features
+
+* **provider:** added decorator for angular provider ([58aeafc](https://github.com/schoes/angular-one-decorators/commit/58aeafc))
+
+
+
 <a name="0.4.4"></a>
 ## [0.4.4](https://github.com/schoes/angular-one-decorators/compare/v0.4.3...v0.4.4) (2017-04-03)
 
