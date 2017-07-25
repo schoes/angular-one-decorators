@@ -4,6 +4,7 @@
   "description": "Typescript 2 decorators for angular 1 projects",
   "main": "index.js",
   "scripts": {
+    "dist": "tsc",
     "preversion": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add -A",
     "postversion": "git push --tags && npm publish",
     "ci": "tsc"
@@ -20,7 +21,7 @@
   "author": "Sven Schoeni",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/schoes/angular-typescript-decorators/issues"
+    "url": "https://github.com/schoes/angular-one-decorators/issues"
   },
   "homepage": "https://github.com/schoes/angular-one-decorators#readme",
   "devDependencies": {
