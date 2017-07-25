@@ -1,3 +1,13 @@
+<a name="0.5.1"></a>
+## [0.5.1](https://github.com/schoes/angular-one-decorators/compare/v0.5.0...v0.5.1) (2017-07-24)
+
+
+### Bug Fixes
+
+* **version:** add preversion hook ([95ca2e8](https://github.com/schoes/angular-one-decorators/commit/95ca2e8))
+
+
+
 <a name="0.5.0"></a>
 # [0.5.0](https://github.com/schoes/angular-one-decorators/compare/v0.4.4...v0.5.0) (2017-07-24)
 
