@@ -24,11 +24,11 @@
     "url": "https://github.com/schoes/angular-one-decorators/issues"
   },
   "homepage": "https://github.com/schoes/angular-one-decorators#readme",
-  "devDependencies": {
+  "peerDependencies": {
     "@types/angular": "~1.6.0",
     "@types/lodash": "~4.14.0",
     "angular": "~1.6.0",
     "lodash": "~4.17.0",
-    "typescript": "~2.2.0"
+    "typescript": "~2.4.0"
   }
 }
