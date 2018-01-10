@@ -20,7 +20,7 @@ export interface ComponentOptions extends angular.IComponentOptions, ModuleOptio
     styles?: string;
 }
 
-export function Component(options: ComponentOptions): Function {
+export function NG1Component(options: ComponentOptions): Function {
 
     return (controller: Function) => {
         let component: ComponentOptions = _.assign(options, {controller});
@@ -40,7 +40,7 @@ export interface ServiceOptions extends ModuleOptions {
     serviceName: string;
 }
 
-export function Service(options: ServiceOptions): Function {
+export function NG1Service(options: ServiceOptions): Function {
     return (service: Function) => {
         if (typeof angular !== 'undefined') {
             _getModule(options.module)
@@ -54,7 +54,7 @@ export interface ProviderOptions extends ModuleOptions {
     providerName: string;
 }
 
-export function Provider(options: ProviderOptions): Function {
+export function NG1Provider(options: ProviderOptions): Function {
     return (provider: angular.IServiceProvider) => {
         if (typeof angular !== 'undefined') {
             _getModule(options.module)
@@ -68,7 +68,7 @@ export interface FactoryOptions extends ModuleOptions {
     factoryName: string;
 }
 
-export function Factory(options: FactoryOptions): Function {
+export function NG1Factory(options: FactoryOptions): Function {
     return (factory: Function) => {
         if (typeof angular !== 'undefined') {
             _getModule(options.module)
@@ -82,7 +82,7 @@ export interface FilterOptions extends ModuleOptions {
     filterName: string;
 }
 
-export function Filter(options: FilterOptions) {
+export function NG1Filter(options: FilterOptions) {
     return (target: any, propertyKey: string, descriptor: PropertyDescriptor) => {
         if (typeof angular !== 'undefined') {
             _getModule(options.module)
@@ -92,7 +92,7 @@ export function Filter(options: FilterOptions) {
     };
 };
 
-export function Config(options: ModuleOptions) {
+export function NG1Config(options: ModuleOptions) {
     return (target: any, propertyKey: string, descriptor: PropertyDescriptor) => {
         if (typeof angular !== 'undefined') {
             _getModule(options.module)
@@ -103,7 +103,7 @@ export function Config(options: ModuleOptions) {
 };
 
 
-export function Run(options: ModuleOptions) {
+export function NG1Run(options: ModuleOptions) {
     return (target: any, propertyKey: string, descriptor: PropertyDescriptor) => {
         if (typeof angular !== 'undefined') {
             _getModule(options.module)
