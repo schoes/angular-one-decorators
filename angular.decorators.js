@@ -12,7 +12,7 @@ function _getModule(moduleName) {
     }
     return module;
 }
-function Component(options) {
+function NG1Component(options) {
     return function (controller) {
         var component = _.assign(options, { controller: controller });
         if (typeof angular !== 'undefined') {
@@ -25,9 +25,9 @@ function Component(options) {
         return _.camelCase(component.selector);
     }
 }
-exports.Component = Component;
+exports.NG1Component = NG1Component;
 ;
-function Service(options) {
+function NG1Service(options) {
     return function (service) {
         if (typeof angular !== 'undefined') {
             _getModule(options.module)
@@ -36,9 +36,9 @@ function Service(options) {
         return service;
     };
 }
-exports.Service = Service;
+exports.NG1Service = NG1Service;
 ;
-function Provider(options) {
+function NG1Provider(options) {
     return function (provider) {
         if (typeof angular !== 'undefined') {
             _getModule(options.module)
@@ -47,9 +47,9 @@ function Provider(options) {
         return provider;
     };
 }
-exports.Provider = Provider;
+exports.NG1Provider = NG1Provider;
 ;
-function Factory(options) {
+function NG1Factory(options) {
     return function (factory) {
         if (typeof angular !== 'undefined') {
             _getModule(options.module)
@@ -58,9 +58,9 @@ function Factory(options) {
         return factory;
     };
 }
-exports.Factory = Factory;
+exports.NG1Factory = NG1Factory;
 ;
-function Filter(options) {
+function NG1Filter(options) {
     return function (target, propertyKey, descriptor) {
         if (typeof angular !== 'undefined') {
             _getModule(options.module)
@@ -69,9 +69,9 @@ function Filter(options) {
         return descriptor.value;
     };
 }
-exports.Filter = Filter;
+exports.NG1Filter = NG1Filter;
 ;
-function Config(options) {
+function NG1Config(options) {
     return function (target, propertyKey, descriptor) {
         if (typeof angular !== 'undefined') {
             _getModule(options.module)
@@ -80,9 +80,9 @@ function Config(options) {
         return descriptor.value;
     };
 }
-exports.Config = Config;
+exports.NG1Config = NG1Config;
 ;
-function Run(options) {
+function NG1Run(options) {
     return function (target, propertyKey, descriptor) {
         if (typeof angular !== 'undefined') {
             _getModule(options.module)
@@ -91,6 +91,6 @@ function Run(options) {
         return descriptor.value;
     };
 }
-exports.Run = Run;
+exports.NG1Run = NG1Run;
 ;
 //# sourceMappingURL=angular.decorators.js.map
