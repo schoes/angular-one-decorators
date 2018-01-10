@@ -1,3 +1,13 @@
+<a name="0.6.0"></a>
+# [0.6.0](https://github.com/schoes/angular-one-decorators/compare/v0.5.1...v0.6.0) (2017-07-25)
+
+
+### Bug Fixes
+
+* **declarations:** add d.ts files ([aff423d](https://github.com/schoes/angular-one-decorators/commit/aff423d))
+
+
+
 <a name="0.5.1"></a>
 ## [0.5.1](https://github.com/schoes/angular-one-decorators/compare/v0.5.0...v0.5.1) (2017-07-24)
 
