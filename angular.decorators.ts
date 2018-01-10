@@ -19,7 +19,8 @@ export interface ComponentOptions extends angular.IComponentOptions, ModuleOptio
     selector: string;
     styles?: string;
 }
-export const Component = (options: ComponentOptions): Function => {
+
+export function Component(options: ComponentOptions): Function {
 
     return (controller: Function) => {
         let component: ComponentOptions = _.assign(options, {controller});
@@ -38,7 +39,8 @@ export const Component = (options: ComponentOptions): Function => {
 export interface ServiceOptions extends ModuleOptions {
     serviceName: string;
 }
-export const Service = (options: ServiceOptions): Function => {
+
+export function Service(options: ServiceOptions): Function {
     return (service: Function) => {
         if (typeof angular !== 'undefined') {
             _getModule(options.module)
@@ -47,10 +49,12 @@ export const Service = (options: ServiceOptions): Function => {
         return service;
     };
 };
+
 export interface ProviderOptions extends ModuleOptions {
     providerName: string;
 }
-export const Provider = (options: ProviderOptions): Function => {
+
+export function Provider(options: ProviderOptions): Function {
     return (provider: angular.IServiceProvider) => {
         if (typeof angular !== 'undefined') {
             _getModule(options.module)
@@ -59,10 +63,12 @@ export const Provider = (options: ProviderOptions): Function => {
         return provider;
     };
 };
+
 export interface FactoryOptions extends ModuleOptions {
     factoryName: string;
 }
-export const Factory = (options: FactoryOptions): Function => {
+
+export function Factory(options: FactoryOptions): Function {
     return (factory: Function) => {
         if (typeof angular !== 'undefined') {
             _getModule(options.module)
@@ -75,7 +81,8 @@ export const Factory = (options: FactoryOptions): Function => {
 export interface FilterOptions extends ModuleOptions {
     filterName: string;
 }
-export const Filter = (options: FilterOptions) => {
+
+export function Filter(options: FilterOptions) {
     return (target: any, propertyKey: string, descriptor: PropertyDescriptor) => {
         if (typeof angular !== 'undefined') {
             _getModule(options.module)
@@ -85,7 +92,7 @@ export const Filter = (options: FilterOptions) => {
     };
 };
 
-export const Config = (options: ModuleOptions) => {
+export function Config(options: ModuleOptions) {
     return (target: any, propertyKey: string, descriptor: PropertyDescriptor) => {
         if (typeof angular !== 'undefined') {
             _getModule(options.module)
@@ -96,7 +103,7 @@ export const Config = (options: ModuleOptions) => {
 };
 
 
-export const Run = (options: ModuleOptions) => {
+export function Run(options: ModuleOptions) {
     return (target: any, propertyKey: string, descriptor: PropertyDescriptor) => {
         if (typeof angular !== 'undefined') {
             _getModule(options.module)
@@ -105,3 +112,4 @@ export const Run = (options: ModuleOptions) => {
         return descriptor.value;
     };
 };
+

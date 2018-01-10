@@ -12,7 +12,7 @@ function _getModule(moduleName) {
     }
     return module;
 }
-exports.Component = function (options) {
+function Component(options) {
     return function (controller) {
         var component = _.assign(options, { controller: controller });
         if (typeof angular !== 'undefined') {
@@ -24,8 +24,10 @@ exports.Component = function (options) {
     function getComponentNameFromSelector(component) {
         return _.camelCase(component.selector);
     }
-};
-exports.Service = function (options) {
+}
+exports.Component = Component;
+;
+function Service(options) {
     return function (service) {
         if (typeof angular !== 'undefined') {
             _getModule(options.module)
@@ -33,8 +35,10 @@ exports.Service = function (options) {
         }
         return service;
     };
-};
-exports.Provider = function (options) {
+}
+exports.Service = Service;
+;
+function Provider(options) {
     return function (provider) {
         if (typeof angular !== 'undefined') {
             _getModule(options.module)
@@ -42,8 +46,10 @@ exports.Provider = function (options) {
         }
         return provider;
     };
-};
-exports.Factory = function (options) {
+}
+exports.Provider = Provider;
+;
+function Factory(options) {
     return function (factory) {
         if (typeof angular !== 'undefined') {
             _getModule(options.module)
@@ -51,8 +57,10 @@ exports.Factory = function (options) {
         }
         return factory;
     };
-};
-exports.Filter = function (options) {
+}
+exports.Factory = Factory;
+;
+function Filter(options) {
     return function (target, propertyKey, descriptor) {
         if (typeof angular !== 'undefined') {
             _getModule(options.module)
@@ -60,8 +68,10 @@ exports.Filter = function (options) {
         }
         return descriptor.value;
     };
-};
-exports.Config = function (options) {
+}
+exports.Filter = Filter;
+;
+function Config(options) {
     return function (target, propertyKey, descriptor) {
         if (typeof angular !== 'undefined') {
             _getModule(options.module)
@@ -69,8 +79,10 @@ exports.Config = function (options) {
         }
         return descriptor.value;
     };
-};
-exports.Run = function (options) {
+}
+exports.Config = Config;
+;
+function Run(options) {
     return function (target, propertyKey, descriptor) {
         if (typeof angular !== 'undefined') {
             _getModule(options.module)
@@ -78,5 +90,7 @@ exports.Run = function (options) {
         }
         return descriptor.value;
     };
-};
+}
+exports.Run = Run;
+;
 //# sourceMappingURL=angular.decorators.js.map
