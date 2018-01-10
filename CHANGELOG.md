@@ -1,3 +1,8 @@
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/schoes/angular-one-decorators/compare/v0.7.0...v1.0.0) (2018-01-10)
+
+
+
 <a name="0.7.0"></a>
 # [0.7.0](https://github.com/schoes/angular-one-decorators/compare/v0.6.0...v0.7.0) (2018-01-10)
 
